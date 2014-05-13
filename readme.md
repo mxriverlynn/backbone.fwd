@@ -2,6 +2,17 @@
 
 Forward events from one Backbone object, through another. 
 
+## Get The Package
+
+Grab files from the [dist](dist) folder, including the
+uncompressed or minified.
+
+Source code is found in the [src](src) folder.
+
+To run a build, `npm install` and then `grunt`.
+
+You can run the specs on their own with `grunt specs`.
+
 ## Using backbone.fwd
 
 Call the `.fwd` on a target object, passing a source object as
