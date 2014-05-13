@@ -20,6 +20,13 @@ module.exports = function(grunt){
       backbone: "node_modules/backbone/backbone.js"
     },
 
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc'
+      },
+      build: [ 'src/*.js' ]
+    },
+
     concat: {
       options: {
         banner: "<%= meta.banner %>"
@@ -63,7 +70,8 @@ module.exports = function(grunt){
   grunt.loadNpmTasks("grunt-contrib-jasmine");
   grunt.loadNpmTasks("grunt-contrib-concat");
   grunt.loadNpmTasks("grunt-contrib-uglify");
+  grunt.loadNpmTasks("grunt-contrib-jshint");
 
   grunt.registerTask("specs", ["jasmine:all"]);
-  grunt.registerTask("default", ["specs", "concat", "uglify"]);
+  grunt.registerTask("default", ["jshint", "specs", "concat", "uglify"]);
 };
