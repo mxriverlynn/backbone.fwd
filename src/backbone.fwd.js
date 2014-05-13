@@ -3,14 +3,19 @@ Backbone.fwd = function(source, options){
 
   this.listenTo(source, "all", function(){
     var args = Array.prototype.slice.call(arguments);
+    var eventName = args.shift();
 
     // handle prefix for event name
-    var eventName = args.shift();
     if (options.prefix){
       eventName = options.prefix + ":" + eventName;
     }
-    args.unshift(eventName);
 
+    // handle suffix for event name
+    if (options.suffix){
+      eventName = eventName + ":" + options.suffix;
+    }
+
+    args.unshift(eventName);
     this.trigger.apply(this, args);
   }, this);
 };
