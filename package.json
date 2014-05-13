@@ -2,6 +2,9 @@
   "name": "backbone.fwd",
   "version": "0.1.0",
   "private": false,
+  "scripts": {
+    "start": "nodemon --exec grunt specs"
+  },
   "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.5",

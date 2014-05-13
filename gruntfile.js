@@ -72,6 +72,6 @@ module.exports = function(grunt){
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-contrib-jshint");
 
-  grunt.registerTask("specs", ["jasmine:all"]);
+  grunt.registerTask("specs", ["jshint", "jasmine:all"]);
   grunt.registerTask("default", ["jshint", "specs", "concat", "uglify"]);
 };
