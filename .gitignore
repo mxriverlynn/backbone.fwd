@@ -11,3 +11,4 @@ node_modules
 *.orig
 /_SpecRunner.html
 /build
+/.grunt
