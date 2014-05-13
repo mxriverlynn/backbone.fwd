@@ -33,6 +33,41 @@ child.trigger("foo", "baz");
 
 This will forward all events from `child`, through `parent`.
 
+### Configuring Prefix / Suffix
+
+You can configure an event name prefix and suffix for the forwarded
+events, using the `prexix` and `suffix` values in a second
+parameter passed to the `fwd` call. The prefix and suffix will be 
+prepended / appended with a ":".
+
+```js
+var M = Backbone.Model.extend({
+  fwd: Backbone.fwd
+});
+
+var parent = new M();
+var child = new Backbone.Model();
+
+// configure fowarding with a prefix and suffix
+parent.fwd(child, {
+  prefix: "pre",
+  suffix: "post"
+});
+
+// handle the event w/ the pre/suffix name
+parent.on("pre:name:post", function(){
+  // do stuff here
+});
+
+// trigger the event. the prefix and suffix
+// will be added automatically
+child.trigger("name");
+```
+
+In this example, the child object triggers a "name" event, but the parent
+event handler looks for a "pre:name:post" event because of the specified
+prefix and suffix.
+
 ### Attached .fwd vs .call/.apply
 
 The `.fwd` method can either be used with `.call/.apply`, or attached to an 
