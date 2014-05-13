@@ -1,0 +1,13 @@
+.DS_Store
+/deploy
+/queries
+database/db_backups/development
+database/db_backups/staging
+database/db_backups/production
+node_modules
+*.swp
+*.swo
+*.sw0
+*.orig
+/_SpecRunner.html
+/build

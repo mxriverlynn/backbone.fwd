@@ -1,0 +1,12 @@
+{
+  "name": "backbone.fwd",
+  "version": "0.1.0",
+  "private": false,
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "backbone": "^1.1.2",
+    "grunt-contrib-jasmine": "^0.6.4",
+    "underscore": "^1.6.0"
+  }
+}
