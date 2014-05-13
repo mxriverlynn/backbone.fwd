@@ -5,7 +5,8 @@
 // v0.1.0
 // Copyright (C)2014 Muted Solutions, LLC.
 // Distributed under MIT license
-// http://mutedsolutions.com
+// 
+// https://github.com/derickbailey/backbone.fwd
 
 Backbone.fwd = function(source, options){
   options = options || {};

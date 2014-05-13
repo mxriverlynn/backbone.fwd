@@ -11,7 +11,8 @@ module.exports = function(grunt){
         "// v<%= pkg.version %>\n" +
         "// Copyright (C)<%= grunt.template.today('yyyy') %> Muted Solutions, LLC.\n" + 
         "// Distributed under MIT license\n" + 
-        "// http://mutedsolutions.com\n" +
+        "// \n" +
+        "// https://github.com/derickbailey/backbone.fwd\n" +
         "\n"
     },
 
