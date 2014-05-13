@@ -9,7 +9,7 @@ module.exports = function(grunt){
         "// Forward events from a source, through a target object\n" + 
         "// \n" + 
         "// v<%= pkg.version %>\n" +
-        "// Copyright 2014 Muted Solutions, LLC.\n" + 
+        "// Copyright (C)<%= grunt.template.today('yyyy') %> Muted Solutions, LLC.\n" + 
         "// Distributed under MIT license\n" + 
         "// http://mutedsolutions.com\n" +
         "\n"
@@ -18,6 +18,27 @@ module.exports = function(grunt){
     assets: {
       underscore: "node_modules/underscore/underscore.js",
       backbone: "node_modules/backbone/backbone.js"
+    },
+
+    concat: {
+      options: {
+        banner: "<%= meta.banner %>"
+      },
+      dist: {
+        src: ["src/backbone.fwd.js"],
+        dest: "dist/backbone.fwd.js",
+      },
+    },
+
+    uglify: {
+      options: {
+        banner: "<%= meta.banner %>"
+      },
+      dist: {
+        files: {
+          "dist/backbone.fwd.min.js": ["<%= concat.dist.dest %>"]
+        }
+      }
     },
 
     jasmine : {
@@ -40,5 +61,9 @@ module.exports = function(grunt){
   });
 
   grunt.loadNpmTasks("grunt-contrib-jasmine");
+  grunt.loadNpmTasks("grunt-contrib-concat");
+  grunt.loadNpmTasks("grunt-contrib-uglify");
+
   grunt.registerTask("specs", ["jasmine:all"]);
+  grunt.registerTask("default", ["specs", "concat", "uglify"]);
 };
