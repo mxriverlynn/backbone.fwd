@@ -17,5 +17,5 @@ Backbone.fwd = function(source, options){
 
     args.unshift(eventName);
     this.trigger.apply(this, args);
-  }, this);
+  });
 };
